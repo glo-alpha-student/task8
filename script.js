@@ -41,8 +41,8 @@ const appData = {
             while (appData.isNumber(name)) {
                 name = prompt('Какой дополнительный тип услуги нужен?');
             }
-
             price = +prompt('Сколько это будет стоить?');
+
             while (!appData.isNumber(price)) {
                 price = +prompt('Сколько это будет стоить?');
             }
@@ -51,8 +51,6 @@ const appData = {
         }
 
         appData.adaptive = confirm('Нужен ли адаптив на сайте?');
-
-
     },
     addPrices: function () {
         for (let screen of appData.screens) {
