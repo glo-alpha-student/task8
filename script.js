@@ -15,9 +15,17 @@ const appData = {
     asking: function () {
         appData.title = prompt('Как называется ваш проект?');
 
+        while (appData.isNumber(appData.title)) {
+            appData.title = prompt('Как называется ваш проект?');
+        }
+
         for (let i = 0; i < 2; i++) {
-            let name = prompt('Какие типы экранов нужно разработать?');
             let price = 0;
+            let name = prompt('Какие типы экранов нужно разработать?');
+
+            while (appData.isNumber(name)) {
+                name = prompt('Какие типы экранов нужно разработать?');
+            }
 
             price = +prompt('Сколько будет стоить данная работа?');
 
@@ -27,8 +35,12 @@ const appData = {
             appData.screens.push({ id: i, name: name, price: price });
         }
         for (let i = 0; i < 2; i++) {
-            let name = prompt('Какой дополнительный тип услуги нужен?');
             let price = 0;
+            let name = prompt('Какой дополнительный тип услуги нужен?');
+
+            while (appData.isNumber(name)) {
+                name = prompt('Какой дополнительный тип услуги нужен?');
+            }
 
             price = +prompt('Сколько это будет стоить?');
             while (!appData.isNumber(price)) {
